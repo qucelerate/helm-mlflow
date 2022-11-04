@@ -1,6 +1,6 @@
 # Helm Chart for mlflow
 
-[![CircleCI](https://circleci.com/gh/cetic/helm-mlflow.svg?style=svg)](https://circleci.com/gh/cetic/helm-mlflow/tree/master) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) ![version](https://img.shields.io/github/tag/cetic/helm-mlflow.svg?label=release)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) 
 
 ## Introduction
 
@@ -17,7 +17,7 @@ This [Helm](https://github.com/kubernetes/helm) chart installs [mlflow](https://
 ### Add Helm repository
 
 ```bash
-helm repo add cetic https://cetic.github.io/helm-charts
+helm repo add cetic https://qucelerate.github.io/helm-mlflow/
 helm repo update
 ```
 
@@ -90,7 +90,7 @@ The following table lists the configurable parameters of the mlflow chart and th
 
 ## Contributing
 
-Feel free to contribute by making a [pull request](https://github.com/cetic/helm-mlflow/pull/new/master).
+Feel free to contribute by making a [pull request](https://github.com/qucelerate/helm-mlflow/pull/new/master).
 
 Please read the official [Contribution Guide](https://github.com/helm/charts/blob/master/CONTRIBUTING.md) from Helm for more information on how you can contribute to this Chart.
 

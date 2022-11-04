@@ -9,7 +9,7 @@ keywords:
 home: https://mlflow.org/
 icon: https://mlflow.org/docs/latest/_static/MLflow-logo-final-black.png
 source:
-  - https://github.com/cetic/helm-mlflow
+  - https://github.com/qucelerate/helm-mlflow
 maintainers:
   - name: Andrew Miller
     email: andrew.miller@qucelerate.co
