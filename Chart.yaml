@@ -2,8 +2,8 @@ apiVersion: v2
 name: mlflow
 description: A Helm chart for MLFlow
 type: application
-version: 1.5.1
-appVersion: 1.5.1
+version: 1.5.2
+appVersion: 1.18.0
 keywords:
   - mlflow
 home: https://mlflow.org/
@@ -11,12 +11,9 @@ icon: https://mlflow.org/docs/latest/_static/MLflow-logo-final-black.png
 source:
   - https://github.com/cetic/helm-mlflow
 maintainers:
-  - name: AyadiAmen
-    email: amen.ayadi@cetic.be
-    url: https://github.com/AyadiAmen
-  - name: fzalila
-    email: faiez.zalila@cetic.be
-    url: https://github.com/fzalila
+  - name: Andrew Miller
+    email: andrew.miller@qucelerate.co
+    url: https://github.com/QuCelerate
 dependencies:
   - name: postgresql
     version: ~10.3.6
