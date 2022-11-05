@@ -1,13 +1,7 @@
-FROM python:3.8-slim-buster
+FROM python:3.10.6-slim-bullseye
 
-# Build dependencies
-RUN apt-get update -y \
-    && apt-get install -y --no-install-recommends \
-        build-essential libpq-dev
-
-# Pip dependencies
-COPY ./requirements.txt ./requirements.txt
-RUN pip install -r requirements.txt
+# Install dependencies
+RUN pip install mlflow[extras]==1.30.0 psycopg2-binary==2.9.5 boto3==1.26.3
 
 ENV BACKEND_STORE_URI=""
 ENV DEFAULT_ARTIFACT_ROOT="/opt/artifact"
