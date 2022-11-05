@@ -73,7 +73,7 @@ The following table lists the configurable parameters of the mlflow chart and th
 | `artifactRoot`                                    | Bucket and path used to save the artifacts          | `s3://datalake/mlflow/artifacts`       |
 | **Database configuration**                        |                                                     |                                        |
 | `postgresql.enabled`                              | Enable bundled Bitnami Postgresql                   | true                                   |
-| `postgresql.storagClass`                          | Override default cluster storage class for Postgres | `""`                                   |
+| `postgresql.storageClass`                          | Override default cluster storage class for Postgres | `""`                                   |
 | `postgresql.global.postgresql.servicePort`        | Database port                                       | 5432                                   |
 | `postgresql.global.postgresql.postgresqlUsername` | Database user                                       | postgres                               |
 | `postgresql.global.postgresql.postgresqlPassword` | Database password                                   | postgres                                 |
