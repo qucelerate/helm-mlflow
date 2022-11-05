@@ -1,37 +1,39 @@
 replicaCount: 1
 
+clusterDomain: cluster.local
+
 image:
-  repository: ayadi05/mlflow
-  tag: 1.5.0
+  repository: andrewvmiller/mlflow
+  tag: 1.30.0
   pullPolicy: IfNotPresent
 
-default_artifact_root: "s3://datalake/mlflow/artifacts"
+artifactRoot: "s3://mlflow/artifacts"
 
-
-
-db:
-  default:
-    enabled: false
-  ## type can be 'postgresql', 'mysql' or any other db type that can be used in a db_uri
-  type: postgresql
-  host: postgresql
-  port: 5432
-  user: admin
-  password: password
-  database: postgres
+postgresql:
+  enabled: true
+  storageClass: ""
+  global:
+    postgresql:
+      postgresqlDatabase: postgres
+      postgresqlUsername: postgres
+      postgresqlPassword: postgres
+      servicePort: 5432
+  persistence:
+    enabled: true
+    size: 10Gi
 
 minio:
   url: minio.default.svc.cluster.local:9000
-  accesskey: secret
-  secretkey: secret
+  accessKey: secret
+  secretKey: secret
 
 nameOverride: ""
 fullnameOverride: ""
 
 service:
-  type: NodePort
+  type: ClusterIP
   port: 80
-  annotations: {}
+  annotations: { }
   ## Set the LoadBalancer service type to internal only.
   ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#internal-load-balancer
   ##
@@ -47,12 +49,21 @@ service:
 ##
 ingress:
   enabled: false
-  annotations: {}
-  tls: []
-  hosts: [mlflow.test]
+  annotations: { }
+  # cert-manager.io/cluster-issuer: "lets-encrypt"
   path: /
+  tls: [ ]
+#    - secretName: mlflow-tls
+#      hosts:
+#        - mlflow.example.com
+  hosts: [ mlflow.test ]
+#    - host: mlflow.example.com
+#      paths:
+#        - path: /
+#          pathType: Prefix
 
-resources: {}
+
+resources: { }
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
@@ -60,17 +71,17 @@ resources: {}
   # limits:
   #   cpu: 100m
   #   memory: 128Mi
-  # requests:
-  #   cpu: 100m
-  #   memory: 128Mi
+# requests:
+#   cpu: 100m
+#   memory: 128Mi
 
 # volumes:
 #   - name: minio
 #     persistentVolumeClaim:
 #       claimName: minio
 
-nodeSelector: {}
+nodeSelector: { }
 
-tolerations: []
+tolerations: [ ]
 
-affinity: {}
+affinity: { }

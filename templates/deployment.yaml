@@ -1,3 +1,7 @@
+{{- define "postgresql.host" -}}
+{{- printf "%s-postgresql.%s.svc.%s" .Release.Name .Release.Namespace .Values.clusterDomain -}}
+{{- end -}}
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -29,15 +33,15 @@ spec:
               protocol: TCP
           env:
           - name: BACKEND_STORE_URI
-            value: "{{ .Values.db.type }}://{{ .Values.db.user }}:{{ .Values.db.password }}@{{ .Values.db.host }}:{{ .Values.db.port }}/{{ .Values.db.database }}"
+            value: "postgresql://{{ .Values.postgresql.global.postgresql.postgresqlUsername }}:{{ .Values.postgresql.global.postgresql.postgresqlPassword  }}@{{ (include "postgresql.host" .) }}:{{ .Values.postgresql.global.postgresql.servicePort  }}/{{ .Values.postgresql.global.postgresql.postgresqlDatabase }}"
           - name: DEFAULT_ARTIFACT_ROOT
-            value: {{ .Values.default_artifact_root }}
+            value: {{ .Values.artifactRoot }}
           - name: MLFLOW_S3_ENDPOINT_URL
             value: {{ .Values.minio.url }}
           - name: AWS_ACCESS_KEY_ID
-            value: {{ .Values.minio.accesskey }}
+            value: {{ .Values.minio.accessKey }}
           - name: AWS_SECRET_ACCESS_KEY
-            value: {{ .Values.minio.secretkey }}
+            value: {{ .Values.minio.secretKey }}
           livenessProbe:
             httpGet:
               path: /
