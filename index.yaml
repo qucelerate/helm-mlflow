@@ -3,14 +3,14 @@ entries:
   mlflow:
   - apiVersion: v2
     appVersion: 1.30.0
-    created: "2022-11-04T22:47:30.829271067-04:00"
+    created: "2022-11-04T22:54:35.221638579-04:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
       repository: https://charts.bitnami.com/bitnami
       version: 10.14.3
     description: A Helm chart for MLFlow
-    digest: a25a702c14dcdaeb93793d27a83f3d0467ab50a71b4feaad73def749c674f304
+    digest: 7ced8cd47aa0de2f6e806c712d3d6c8ed3e14a05078311616a422b88dd9ad646
     home: https://mlflow.org/
     icon: https://mlflow.org/docs/latest/_static/MLflow-logo-final-black.png
     keywords:
@@ -29,7 +29,7 @@ entries:
       category: Database
     apiVersion: v2
     appVersion: 11.14.0
-    created: "2022-11-04T22:47:30.831415381-04:00"
+    created: "2022-11-04T22:54:35.223856412-04:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -58,4 +58,4 @@ entries:
     urls:
     - https://qucelerate.github.io/helm-mlflow/charts/postgresql-10.14.3.tgz
     version: 10.14.3
-generated: "2022-11-04T22:47:30.826172678-04:00"
+generated: "2022-11-04T22:54:35.21859391-04:00"
