@@ -75,9 +75,9 @@ The following table lists the configurable parameters of the mlflow chart and th
 | `postgresql.enabled`                              | Enable bundled Bitnami Postgresql                   | true                                   |
 | `postgresql.storagClass`                          | Override default cluster storage class for Postgres | `""`                                   |
 | `postgresql.global.postgresql.servicePort`        | Database port                                       | 5432                                   |
-| `postgresql.global.postgresql.postgresqlUsername` | Database user                                       | mlflow                                 |
-| `postgresql.global.postgresql.postgresqlPassword` | Database password                                   | mlflow                                 |
-| `postgresql.global.postgresql.postgresqlDatabase` | Database name                                       | mlflow                                 |
+| `postgresql.global.postgresql.postgresqlUsername` | Database user                                       | postgres                               |
+| `postgresql.global.postgresql.postgresqlPassword` | Database password                                   | postgres                                 |
+| `postgresql.global.postgresql.postgresqlDatabase` | Database name                                       | postgres                                 |
 | **Minio Configuration**                           |                                                     |                                        |
 | `minio.url`                                       | mlflow S3 endpoint url frontend                     | `minio.default.svc.cluster.local:9000` |
 | `minio.accessKey`                                 | minio access key                                    | `secret`                               |
