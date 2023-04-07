@@ -1,7 +1,7 @@
 FROM python:3.10.6-slim-bullseye
 
 # Install dependencies
-RUN pip install mlflow[extras]==1.30.0 psycopg2-binary==2.9.5 boto3==1.26.3
+RUN pip install mlflow[extras]==2.1.1 psycopg2-binary==2.9.5 boto3==1.26.3
 
 ENV BACKEND_STORE_URI=""
 ENV DEFAULT_ARTIFACT_ROOT="/opt/artifact"

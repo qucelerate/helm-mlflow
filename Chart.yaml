@@ -16,6 +16,6 @@ maintainers:
     url: https://github.com/QuCelerate
 dependencies:
   - name: postgresql
-    version: 10.14.3
+    version: 12.2.7
     repository: https://charts.bitnami.com/bitnami
     condition: postgresql.enabled
